@@ -1,7 +1,9 @@
 // ==UserScript==
 // @name         Shoppee Button
-// @version      0.4.4
-// @author       You
+// @version      0.5
+// @author       pond_pop
+// @description  Shoppee script
+// @updateURL    https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Shoppee%20Button.js
 // @match        https://shopee.co.th/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=shopee.co.th
 // @grant        GM_addStyle

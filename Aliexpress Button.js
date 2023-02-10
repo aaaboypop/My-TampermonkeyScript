@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Aliexpress Button
-// @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
+// @author       pond_pop
 // @description  aliexpress script
-// @author       You
+// @updateURL    https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Aliexpress%20Button.js
 // @match        https://*.aliexpress.com/item/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=aliexpress.com
 // @grant        GM_addStyle

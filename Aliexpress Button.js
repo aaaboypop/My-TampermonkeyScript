@@ -4,6 +4,7 @@
 // @author       pond_pop
 // @description  aliexpress script
 // @updateURL    https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Aliexpress%20Button.js
+// @downloadURL  https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Aliexpress%20Button.js
 // @match        https://*.aliexpress.com/item/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=aliexpress.com
 // @grant        GM_addStyle

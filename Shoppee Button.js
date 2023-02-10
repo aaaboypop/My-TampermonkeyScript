@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Shoppee Button
-// @version      0.5
+// @version      0.5.1
 // @author       pond_pop
 // @description  Shoppee script
 // @updateURL    https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Shoppee%20Button.js
@@ -32,6 +32,7 @@ b.addEventListener('click', function(){OpenImageNewTab(b)})
 
 setInterval(function(){
     try {
+        if (wloc.href.toString().match(/shopee.co.th\/user\//g)){ return }
         let hook = "#modal > div > div > div > div:nth-child(2)"
         if ($q(hook)) {
             if ($q("#openImageButton")) {return}

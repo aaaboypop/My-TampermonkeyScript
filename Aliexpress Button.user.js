@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Aliexpress Button
-// @version      0.3
+// @version      0.3.1
 // @author       pond_pop
 // @description  aliexpress script
-// @updateURL    https://github.com/aaaboypop/My-TampermonkeyScript/raw/main/Aliexpress%20Button.user.js
-// @downloadURL  https://github.com/aaaboypop/My-TampermonkeyScript/raw/main/Aliexpress%20Button.user.js
+// @updateURL    https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Aliexpress%20Button.js
+// @downloadURL  https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Aliexpress%20Button.js
 // @match        https://*.aliexpress.com/item/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=aliexpress.com
 // @grant        GM_addStyle
@@ -61,7 +61,7 @@ function OpenImageNewTab(el){
 
 function getURL(el, open=false){
     try {
-        let found = wloc.href.toString().match(/(http.*)\?/);
+        let found = wloc.href.toString().match(/(http.*\.html)/);
         let output = found[1]
         if (open){
             window.open(output, "_self")

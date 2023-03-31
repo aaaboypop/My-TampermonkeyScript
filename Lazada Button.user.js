@@ -3,8 +3,8 @@
 // @version      0.1
 // @author       pond_pop
 // @description  lazada script
-// @updateURL    https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Lazada%20Button.js
-// @downloadURL  https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Lazada%20Button.js
+// @updateURL    https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Lazada%20Button.user.js
+// @downloadURL  https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Lazada%20Button.user.js
 // @match        https://www.lazada.co.th/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=lazada.co.th
 // @grant        GM_addStyle

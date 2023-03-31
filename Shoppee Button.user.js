@@ -3,8 +3,8 @@
 // @version      0.6.1
 // @author       pond_pop
 // @description  Shoppee script
-// @updateURL    https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Shoppee%20Button.js
-// @downloadURL  https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Shoppee%20Button.js
+// @updateURL    https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Shoppee%20Button.user.js
+// @downloadURL  https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Shoppee%20Button.user.js
 // @match        https://shopee.co.th/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=shopee.co.th
 // @grant        GM_addStyle

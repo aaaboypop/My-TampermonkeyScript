@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Shoppee Button
-// @version      0.6.1
+// @version      0.7.1
 // @author       pond_pop
 // @description  Shoppee script
 // @updateURL    https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Shoppee%20Button.user.js
@@ -17,30 +17,34 @@ var wloc = window.location
 const $q = d.querySelector.bind(document),
       $qa = d.querySelectorAll.bind(document);
 
-var filter1Id = false;
-var filter2Id = false;
+var filter1Id = false,
+    filter2Id = false;
 
 // ----- ----- Run ----- -----
 
-GM_addStyle('.cpb{background-color: black; color: white; font-size: 36px; width: 240px; z-index:2;}');
-GM_addStyle('.cpt{background-color: black; color: white; font-size: 36px; width: 240px; z-index:2;}');
+GM_addStyle('#spb{position: fixed;left: 0;bottom: 5vh;z-index:2;transform: scale(1);transform-origin: bottom left;}');
+let div = d.createElement('div');div.id = 'spb';d.body.append(div);
+let show = NewButton("body", "Show", "📤", "position:fixed;left:0;bottom:5vh;z-index:2;width:50px;display:none;", ShowHide)
+
+GM_addStyle('.cpb,.cpt{background-color:black; color:white; font-size:36px; width:240px; padding:0; z-index:2;}');
 GM_addStyle('.divb{filter: blur(5px);}');
 GM_addStyle('.divh{display: none;}');
 
-
-let a = NewButton("body", "CopyLink", "Copy Link", "position: fixed; bottom : 22px; left: 0px;", getURL,[], "Copied !")
-let a1 = NewButton("body", "ShortURL", "↗️", "position: fixed; bottom : 22px; left: 241px; width: 50px", getURL,[true])
-let b = NewButton("body", "OpenImage", "Open Image", "position: fixed; bottom : 72px; left: 0px;",OpenImageNewTab)
-
-let re = NewButton("body", "Reset", "Reset", "position: fixed; bottom : 132px; left: 0px;", resetFilter)
-
-let nf1 = NewEdit("body", "name_match", "Name Match", "position: fixed; bottom : 232px; left: 0px;")
-let nf2 = NewButton("body", "name_filter1", "match", "position: fixed; bottom : 232px; left: 251px; width:110px;", setEvent, [filter1,[true]])
-let nf3 = NewButton("body", "name_filter2", "not", "position: fixed; bottom : 232px; left: 361px; width:110px;", setEvent, [filter1,[false]])
-
-let pf1 = NewEdit("body", "price_match", "Price Filter", "position: fixed; bottom : 182px; left: 0px;")
-let pf2 = NewButton("body", "price_filter1", "<", "position: fixed; bottom : 182px; left: 251px; width:110px;", setEvent, [filter2,[false]])
-let pf3 = NewButton("body", "price_filter2", ">", "position: fixed; bottom : 182px; left: 361px; width:110px;", setEvent, [filter2,[true]])
+let nf1 = NewEdit("#spb", "name_match", "Name Match", "")
+let nf2 = NewButton("#spb", "name_filter1", "match", "width:110px;", setEvent, [filter1,[true]])
+let nf3 = NewButton("#spb", "name_filter2", "not", "width:110px;", setEvent, [filter1,[false]])
+NewBr()
+let pf1 = NewEdit("#spb", "price_match", "Price Filter", "")
+let pf2 = NewButton("#spb", "price_filter1", "<", "width:110px;", setEvent, [filter2,[false]])
+let pf3 = NewButton("#spb", "price_filter2", ">", "width:110px;", setEvent, [filter2,[true]])
+NewBr()
+let re = NewButton("#spb", "Reset", "Reset", "margin-bottom: 10px;", resetFilter)
+NewBr()
+let b = NewButton("#spb", "OpenImage", "Open Image", "",OpenImageNewTab)
+NewBr()
+let a = NewButton("#spb", "CopyLink", "Copy Link", "", getURL,[], "Copied !")
+let a1 = NewButton("#spb", "ShortURL", "↗️", "width: 50px", getURL,[true])
+let hide = NewButton("#spb", "Hide", "📥", "width: 50px", ShowHide)
 
 setInterval(function(){
     try {
@@ -61,11 +65,10 @@ function NewButton(selector, name, text, style, fnCall, args=[], textOK="OK", te
     a.id = name;
     a.style = style;
     a.classList = 'cpb';
-    el.prepend(a);
+    el.append(a);
     a.addEventListener('click', function(){ buttonEvents(a, fnCall, args, text, textOK, textErr)})
     return a
 }
-
 
 function NewEdit(selector, name, text, style){
     let el = $q(selector);
@@ -75,8 +78,14 @@ function NewEdit(selector, name, text, style){
     a.id = name;
     a.style = style;
     a.classList = 'cpt';
-    el.prepend(a);
+    el.append(a);
     return a
+}
+
+function NewBr(){
+    let el = $q('#spb');
+    let a = d.createElement('br');
+    el.append(a);
 }
 
 function changeText(el, text, color){
@@ -188,4 +197,16 @@ function filter2(moreThan){
             }
         }
     });
+}
+
+function ShowHide(){
+    let el = $q('#spb'),
+        eld = el.style.display;
+    if (eld == ''){
+        el.style.display = 'none';
+        show.style.display = '';
+    } else {
+        el.style.display = '';
+        show.style.display = 'none';
+    }
 }

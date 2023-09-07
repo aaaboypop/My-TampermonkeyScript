@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Shoppee Button
-// @version      0.7.1
+// @version      0.7.2
 // @author       pond_pop
 // @description  Shoppee script
 // @updateURL    https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Shoppee%20Button.user.js
@@ -112,12 +112,12 @@ function getURL(thisTab=false){
 function OpenImageNewTab(fw=false){
     try {
         let url
-        if (fw===true) { url = $q("#modal > div > div > div > div > div > div") ;}
-        else { url = $q("div.flex.flex-column > div > div > div:nth-child(2) > div") ;}
+        if (fw===true) { url = $q("#modal > div > div > div > div > div > picture > img") ;}
+        else { url = $q("div.flex.flex-column > div > div > div > picture > img") ;}
 
         if (url){
-            const found = url.style.backgroundImage.match(/"(.*)"/);
-            window.open(found[1]);
+            const found = url.src;
+            window.open(found);
         } else { throw 'video' }
     } catch {
         let url = $q("div.flex.flex-column > div > div > div > div > video").src ;

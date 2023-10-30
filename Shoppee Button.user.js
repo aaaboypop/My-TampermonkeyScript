@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Shoppee Button
-// @version      0.7.2
+// @version      0.7.3
 // @author       pond_pop
 // @description  Shoppee script
 // @updateURL    https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Shoppee%20Button.user.js
@@ -150,7 +150,7 @@ function resetFilter(){
     clearInterval(filter1Id)
     clearInterval(filter2Id)
 
-    let all_item = document.querySelectorAll('div.col-xs-2-4.shopee-search-item-result__item');
+    let all_item = document.querySelectorAll('li.col-xs-2-4.shopee-search-item-result__item');
     [].forEach.call(all_item, function(div) {
         filterOut_aciton(div, true);
     });
@@ -159,7 +159,7 @@ function resetFilter(){
 function filter1(match=true){
     //console.log("filter1")
     let text = document.querySelector('input#name_match').value
-    let all_item = document.querySelectorAll('div.col-xs-2-4.shopee-search-item-result__item');
+    let all_item = document.querySelectorAll('li.col-xs-2-4.shopee-search-item-result__item');
 
     [].forEach.call(all_item, function(div) {
         let p_name = div.querySelector('img').alt ;
@@ -175,7 +175,7 @@ function filter1(match=true){
 function filter2(moreThan){
     //console.log("filter2")
     let price = document.querySelector('input#price_match').value
-    let all_item = document.querySelectorAll('div.col-xs-2-4.shopee-search-item-result__item');
+    let all_item = document.querySelectorAll('li.col-xs-2-4.shopee-search-item-result__item');
 
     [].forEach.call(all_item, function(div) {
         let p1 = parseInt(div.querySelector("div > span:nth-child(2)").innerText.replace(',',''));

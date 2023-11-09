@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Aliexpress Button
-// @version      0.3.2
+// @version      0.3.3
 // @author       pond_pop
 // @description  aliexpress script
-// @updateURL    https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Aliexpress%20Button.user.js
-// @downloadURL  https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Aliexpress%20Button.user.js
+// @updateURL    https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Aliexpress%20Button.js
+// @downloadURL  https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Aliexpress%20Button.js
 // @match        https://*.aliexpress.com/item/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=aliexpress.com
 // @grant        GM_addStyle
@@ -62,6 +62,6 @@ function getURL(thisTab=false){
 
 function OpenImageNewTab(){
     let url
-    url = $q("#pdp-main-image > div > div > div.image-view-magnifier-wrap > img") ;
+    url = $q("div.pdp-info-left > div > div > div > div> div > img") ;
         window.open(url.src);
 }

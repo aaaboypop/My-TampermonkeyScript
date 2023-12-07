@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Aliexpress Button
-// @version      0.3.3
+// @version      0.3.4
 // @author       pond_pop
 // @description  aliexpress script
 // @updateURL    https://raw.githubusercontent.com/aaaboypop/My-TampermonkeyScript/main/Aliexpress%20Button.js
@@ -51,8 +51,8 @@ function buttonEvents(el, fnCall, args, textNormal, textOK, textErr="Error !"){
 }
 
 function getURL(thisTab=false){
-    let found = wloc.href.toString().match(/(http.*\.html)/);
-    let output = found[1];
+    let found = wloc.href.toString().match(/(aliexpress.*\.html)/);
+    let output = "https://" + found[1];
     if (thisTab){
         window.open(output, "_self")
         return
